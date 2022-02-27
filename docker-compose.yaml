@@ -1,0 +1,8 @@
+services:
+  discord-music-bot:
+    container_name: 'music-bot'
+    image: openjdk:8
+    working_dir: /home
+    volumes:
+      - ./config.txt:/home/config.txt
+    command: "sh -c 'wget -O - https://raw.githubusercontent.com/5pecia1/MusicBot/f7423d4bc28851b9b7f5d56024a4705f1412e96a/scripts/run_jmusicbot.sh | sh'"
