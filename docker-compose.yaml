@@ -5,4 +5,6 @@ services:
     working_dir: /home
     volumes:
       - ./config.txt:/home/config.txt
-    command: "sh -c 'wget -O - https://raw.githubusercontent.com/5pecia1/MusicBot/d8691edf9a5e0c3e1aa9dd0f1a369369cdaf1196/scripts/run_jmusicbot.sh | sh'"
+      - ./scripts/run_jmusicbot.sh:/home/run_jmusicbot.sh
+    # command: "sh -c 'wget -O - https://raw.githubusercontent.com/5pecia1/MusicBot/d8691edf9a5e0c3e1aa9dd0f1a369369cdaf1196/scripts/run_jmusicbot.sh | sh'"
+    command: "sh /home/run_jmusicbot.sh"
